@@ -62,7 +62,6 @@ body {
 
 
 
-
 /* SIDEBAR */
 #sidebar {
 	position: fixed;
@@ -171,6 +170,10 @@ body {
 	min-width: calc(60px  - ((4px + 6px) * 2));
 	display: flex;
 	justify-content: center;
+}
+
+.text{
+	font-family: var(--poppins);
 }
 /* SIDEBAR */
 
