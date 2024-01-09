@@ -34,9 +34,30 @@ document.addEventListener('DOMContentLoaded', () => {
 const menuBar = document.querySelector('#content nav .bx.bx-menu');
 const sidebar = document.getElementById('sidebar');
 
-menuBar.addEventListener('click', function () {
-	sidebar.classList.toggle('hide');
-})
+function toggleSidebar() {
+    sidebar.classList.toggle('hide');
+}
+
+menuBar.addEventListener('click', toggleSidebar);
+
+// Check the initial width and add or remove the event listener accordingly
+const mediaQuery = window.matchMedia('(max-width: 576px)');
+
+function handleScreenWidthChange(e) {
+    if (e.matches) {
+        // If the screen width is 576px or less, trigger a click on menuBar
+        menuBar.click();
+    }
+}
+
+// Call it once to check the initial screen width
+handleScreenWidthChange(mediaQuery);
+
+// Add a listener for screen width changes using addEventListener
+mediaQuery.addEventListener('change', handleScreenWidthChange);
+
+
+
 
 //FILTER
 
